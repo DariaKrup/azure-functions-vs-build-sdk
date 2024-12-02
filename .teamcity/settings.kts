@@ -40,7 +40,7 @@ project {
         hashiCorpVaultConnection {
             id = "PROJECT_EXT_4"
             name = "HashiCorp Vault (Sub)"
-            vaultId = "a"
+            vaultId = ""
             url = "https://localhost:8200"
             authMethod = appRole {
                 roleId = "a"
