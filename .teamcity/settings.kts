@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.dotnetTest
 import jetbrains.buildServer.configs.kotlin.buildSteps.msBuild
 import jetbrains.buildServer.configs.kotlin.buildSteps.nuGetInstaller
+import jetbrains.buildServer.configs.kotlin.projectFeatures.hashiCorpVaultConnection
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -34,6 +35,19 @@ version = "2024.03"
 project {
 
     buildType(MSBuild)
+
+    features {
+        hashiCorpVaultConnection {
+            id = "PROJECT_EXT_4"
+            name = "HashiCorp Vault (Sub)"
+            vaultId = "a"
+            url = "https://localhost:8200"
+            authMethod = appRole {
+                roleId = "a"
+                secretId = "credentialsJSON:f09b01b5-dfc8-4183-9d53-eb3135fedee1"
+            }
+        }
+    }
 }
 
 object MSBuild : BuildType({
