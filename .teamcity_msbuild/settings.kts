@@ -29,7 +29,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2024.03"
+version = "2025.03"
 
 project {
 
@@ -59,6 +59,7 @@ object MSBuild : BuildType({
         }
         msBuild {
             id = "MSBuild"
+            enabled = false
             path = "FunctionsSdk.sln"
             toolsVersion = MSBuildStep.MSBuildToolsVersion.NONE
             platform = MSBuildStep.Platform.x64
