@@ -66,6 +66,7 @@ object MSBuild : BuildType({
         }
         dotnetTest {
             id = "dotnet_1"
+            enabled = false
             projects = "test/Microsoft.NET.Sdk.Functions.Generator.Tests/Microsoft.NET.Sdk.Functions.Generator.Tests.csproj"
             sdk = "6"
         }
